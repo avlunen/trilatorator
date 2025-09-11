@@ -179,6 +179,7 @@ class Trilatorator:
       # will be set False in run()
       self.first_start = True
 
+      # filters for layer selection: only projected points layers allowed
       self.map_layers = QgsProject.instance().mapLayers().values()
       self.allow_list = [
                               lyr.id() for lyr in self.map_layers if lyr.crs().isGeographic() == False
@@ -309,6 +310,7 @@ class Trilatorator:
             ia = float(self.dlg.m_distances.item(i, 1).text())
             ib = float(self.dlg.m_distances.item(i, 2).text())
 
+            # BUBU: this could be simplified by using a translation matrix
             x1_trans = x1_orig - x1_orig
             y1_trans = y1_orig - y1_orig
 
@@ -326,7 +328,7 @@ class Trilatorator:
             c_x = (asq - bsq + x2sq) / (2 * x_r)
             c_y = math.sqrt(abs(asq-(c_x*c_x)))
 
-            (c_x_rot,c_y_rot) = self.rotate_vector(c_x, c_y, theta)
+            (c_x_rot,c_y_rot) = self.rotate_vector(c_x, c_y, -theta)
 
             c_x_orig = c_x_rot + x1_orig
             c_y_orig = c_y_rot + y1_orig
