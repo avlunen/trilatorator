@@ -1,4 +1,4 @@
-Plug-in for QGIS3.x to create points by trilatering from a baseline. Detailed documentation to follow...
+Plug-in for QGIS3.x to create points by trilatering from a baseline. This is still work-in-progress, i.e., the code is not finished yet.
 
 <h1>Principle</h1>
 <p>
