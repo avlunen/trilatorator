@@ -1,0 +1,1 @@
+Plug-in for QGIS3.x to create points by trilatering from a baseline.
