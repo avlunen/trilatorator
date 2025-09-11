@@ -311,16 +311,20 @@ class Trilatorator:
             ib = float(self.dlg.m_distances.item(i, 2).text())
 
             # BUBU: this could be simplified by using a translation matrix
+            # translate to origin
             x1_trans = x1_orig - x1_orig
             y1_trans = y1_orig - y1_orig
 
             x2_trans = x2_orig - x1_orig
             y2_trans = y2_orig - y1_orig
 
+            # find angle between vector and x axis
             theta = math.atan2(y2_trans,x2_trans)
 
+            # rotate by that angle
             (x_r,y_r) = self.rotate_vector(x2_trans, y2_trans, theta, False)
 
+            # derive point
             asq = ia * ia
             bsq = ib * ib
             x2sq = x_r * x_r
@@ -328,8 +332,10 @@ class Trilatorator:
             c_x = (asq - bsq + x2sq) / (2 * x_r)
             c_y = math.sqrt(abs(asq-(c_x*c_x)))
 
+            # rotate new point back
             (c_x_rot,c_y_rot) = self.rotate_vector(c_x, c_y, -theta)
 
+            # translate new point back
             c_x_orig = c_x_rot + x1_orig
             c_y_orig = c_y_rot + y1_orig
 

@@ -43,7 +43,7 @@ Trilateration starts from a <i>baseline</i>, i.e., a line formed by two known po
 
 <ol>
    <li>Translate point A so that it lies at the origin.</li>
-   <li>Translate point B by the same distance; rotate the translated B around the origin so that it lies on the x axis. (To find the angle between a point [x,y] and the x axis: $\theta = \arctan ( \frac{y}{x} ) $).</li>
+   <li>Translate point B by the same distance; rotate the translated B around the origin so that it lies on the x axis. (To find the angle between a vector [x,y] and the x axis: $\theta = \arctan ( \frac{y}{x} ) $).</li>
    <li>Compute C by using the formulas above.</li>
    <li>Rotate back point C by the same angle as B was, i.e., by $-\theta$.</li>
    <li>Translate C by the same amount that point A was, see point 1.</li>
