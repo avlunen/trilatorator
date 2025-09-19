@@ -333,7 +333,7 @@ class Trilatorator:
             c_y = math.sqrt(abs(asq-(c_x*c_x))) # BUBU: add radio button to dialog whether left/right of base line, and reflect his here
 
             # rotate new point back
-            (c_x_rot,c_y_rot) = self.rotate_vector(c_x, c_y, -theta)
+            (c_x_rot,c_y_rot) = self.rotate_vector(c_x, c_y, theta)
 
             # translate new point back
             c_x_orig = c_x_rot + x1_orig
