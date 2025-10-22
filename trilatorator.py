@@ -291,7 +291,7 @@ class Trilatorator:
       if result:
          # BUBU: check that all values have been set
          if self.pointA == None or self.pointB == None:
-            self.iface.messageBar().pushMessage("Error", "Points not set!", level=Qgis.Critical)
+            self.iface.messageBar().pushMessage("Error", "Points not set!", level=Qgis.Critical, duration=3)
             return
 
          point_a = self.pointA.geometry()
@@ -311,19 +311,19 @@ class Trilatorator:
 
          while i < self.dlg.m_distances.rowCount():
             if self.dlg.m_distances.item(i, 0) == None:
-               self.iface.messageBar().pushMessage("Error", "Id not set!", level=Qgis.Critical)
+               self.iface.messageBar().pushMessage("Error", "Id not set!", level=Qgis.Critical, duration=3)
                return
             else:
                iid = int(self.dlg.m_distances.item(i, 0).text())
             
             if self.dlg.m_distances.item(i, 1) == None:
-               self.iface.messageBar().pushMessage("Error", "Distance A not set!", level=Qgis.Critical)
+               self.iface.messageBar().pushMessage("Error", "Distance A not set!", level=Qgis.Critical, duration=3)
                return
             else:          
               ia = float(self.dlg.m_distances.item(i, 1).text())
 
             if self.dlg.m_distances.item(i, 2) == None:
-               self.iface.messageBar().pushMessage("Error", "Distance B not set!", level=Qgis.Critical)
+               self.iface.messageBar().pushMessage("Error", "Distance B not set!", level=Qgis.Critical, duration=3)
                return
             else:          
                ib = float(self.dlg.m_distances.item(i, 2).text())
