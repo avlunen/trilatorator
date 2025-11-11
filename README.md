@@ -1,5 +1,4 @@
-Plug-in for QGIS3.x to create points by trilatering from a baseline. This is still work-in-progress, i.e., the code is not finished yet.
-
+Plug-in for QGIS3.x to create points by trilatering from a baseline. This is still work-in-progress; code needs more testing, and a manual to be written.
 <h1>Principle</h1>
 <p>
 Trilateration starts from a <i>baseline</i>, i.e., a line formed by two known points A and B. The coordinates for these points have established, e.g., by GPS readings.</p>
